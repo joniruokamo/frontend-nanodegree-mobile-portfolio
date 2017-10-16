@@ -454,7 +454,6 @@ var resizePizzas = function(size) {
       var dx = determineDx(rpc, size);
       var newwidth = (rpc.offsetWidth + dx) + 'px';
       rpc.style.width = newwidth;
-    }
   }
 
   changePizzaSizes(size);
