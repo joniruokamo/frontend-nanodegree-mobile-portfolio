@@ -447,7 +447,8 @@ var resizePizzas = function(size) {
     return dx;
   }
 
-  // Iterates through pizza elements on the page and changes their widths
+  // Iterates through pizza elements on the page and changes their widths'
+  // Moved unnecessary stuff out from the for loop and used a variable for rpc.
   function changePizzaSizes(size) {
     var rpc = document.querySelectorAll(".randomPizzaContainer");
     var dx = determineDx(rpc[0], size);
@@ -469,6 +470,7 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+// Moved unnecessary stuff out from the for loop.
 var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));
@@ -502,6 +504,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
+  // Moved unnecessary stuff out from the for loop.
   var items = document.querySelectorAll('.mover');
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   for (var i = 0; i < items.length; i++) {
